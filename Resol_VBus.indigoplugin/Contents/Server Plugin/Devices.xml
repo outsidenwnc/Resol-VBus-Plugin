@@ -2,153 +2,47 @@
 <Devices>
 	<!-- Define some devices -->
 	<Device type="custom" id="station">
-		<Name>Weather Station</Name>
+		<Name>Resol Gateway IP Address</Name>
 		<ConfigUI>
 			<Field id="address" type="textfield">
 				<Label>Enter a station ID:</Label>
 			</Field>
-			<Field id="label" type="label" fontSize="small" fontColor="darkgray">
-				<Label>You can find the closest station by going to http://www.weather.gov/xml/current_obs/. Clicking on the button below will also take you there if your client and server are on the same Mac.</Label>
-			</Field>
-			<Field id="goToStationURL" type="button">
-				<Label/>
-				<Title>Find NOAA Stations</Title>
-				<CallbackMethod>goToStationURL</CallbackMethod>
-			</Field>
 		</ConfigUI>
 		<UiDisplayStateId>temperatureString</UiDisplayStateId>
 		<States>
-			<State id="observationDate">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Observation Date/Time</TriggerLabel>
-				<ControlPageLabel>Last Observation Date/Time</ControlPageLabel>
-			</State>
-			<State id="currentCondition">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Current Condition</TriggerLabel>
-				<ControlPageLabel>Current Condition</ControlPageLabel>
-			</State>
-			<State id="currentConditionIcon">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Current Condition Icon</TriggerLabel>
-				<ControlPageLabel>Current Condition Icon</ControlPageLabel>
-			</State>
-			<State id="visibility">
+			<State id="tempsensor1">
 				<ValueType>Number</ValueType>
-				<TriggerLabel>Visibility</TriggerLabel>
-				<ControlPageLabel>Current Visibility</ControlPageLabel>
+				<TriggerLabel>Temperature Sensor 1</TriggerLabel>
+				<ControlPageLabel>Temperature Sensor 1</ControlPageLabel>
+			</State>
+			<State id="tempsensor2">
+				<ValueType>Number</ValueType>
+				<TriggerLabel>Temperature Sensor 2</TriggerLabel>
+				<ControlPageLabel>Temperature Sensor 2</ControlPageLabel>
+			</State>
+			<State id="tempsensor3">
+				<ValueType>Number</ValueType>
+				<TriggerLabel>Temperature Sensor 3</TriggerLabel>
+				<ControlPageLabel>Temperature Sensor 3</ControlPageLabel>
+			</State>
+			<State id="tempsensor4">
+				<ValueType>Number</ValueType>
+				<TriggerLabel>Temperature Sensor 4</TriggerLabel>
+				<ControlPageLabel>Temperature Sensor 4</ControlPageLabel>
+			</State>
+			</State>
+			<State id="pumpsprelay1">
+				<ValueType>Number</ValueType>
+				<TriggerLabel>Pump Speed Relay 1</TriggerLabel>
+				<ControlPageLabel>Pump Speed Relay 1</ControlPageLabel>
+			</State>
+		    <State id="pumpsprelay2">
+				<ValueType>Number</ValueType>
+				<TriggerLabel>Pump Speed Relay 2</TriggerLabel>
+				<ControlPageLabel>Pump Speed Relay 2</ControlPageLabel>
 			</State>
 			<State id="sep0">
 				<ValueType>Separator</ValueType>
-			</State>
-			<State id="temperatureF">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Temperature °F</TriggerLabel>
-				<ControlPageLabel>Current Temperature °F</ControlPageLabel>
-			</State>
-			<State id="temperatureC">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Temperature °C</TriggerLabel>
-				<ControlPageLabel>Current Temperature °C</ControlPageLabel>
-			</State>
-			<State id="temperatureString">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Temperature String</TriggerLabel>
-				<ControlPageLabel>Current Temperature String</ControlPageLabel>
-			</State>
-			<State id="humidity">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Relative Humidity</TriggerLabel>
-				<ControlPageLabel>Current Relative Humidity</ControlPageLabel>
-			</State>
-			<State id="sep1">
-				<ValueType>Separator</ValueType>
-			</State>
-			<State id="dewPointF">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Dew Point °F</TriggerLabel>
-				<ControlPageLabel>Current Dew Point °F</ControlPageLabel>
-			</State>
-			<State id="dewPointC">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Dew Point °C</TriggerLabel>
-				<ControlPageLabel>Current Dew Point °C</ControlPageLabel>
-			</State>
-			<State id="dewPointString">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Dew Point String</TriggerLabel>
-				<ControlPageLabel>Current Dew Point String</ControlPageLabel>
-			</State>
-			<State id="heatIndexF">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Heat Index °F</TriggerLabel>
-				<ControlPageLabel>Current Heat Index °F</ControlPageLabel>
-			</State>
-			<State id="heatIndexC">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Heat Index °C</TriggerLabel>
-				<ControlPageLabel>Current Heat Index °C</ControlPageLabel>
-			</State>
-			<State id="heatIndexString">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Heat Index String</TriggerLabel>
-				<ControlPageLabel>Current Heat Index String</ControlPageLabel>
-			</State>
-			<State id="sep2">
-				<ValueType>Separator</ValueType>
-			</State>
-			<State id="windDirection">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Wind Direction</TriggerLabel>
-				<ControlPageLabel>Current Wind Direction</ControlPageLabel>
-			</State>
-			<State id="windDegrees">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Wind Degrees</TriggerLabel>
-				<ControlPageLabel>Current Wind Degrees</ControlPageLabel>
-			</State>
-			<State id="windMPH">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Wind MPH</TriggerLabel>
-				<ControlPageLabel>Current Wind MPH</ControlPageLabel>
-			</State>
-			<State id="windKnots">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Wind Knots</TriggerLabel>
-				<ControlPageLabel>Current Wind Knots</ControlPageLabel>
-			</State>
-			<State id="windString">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Wind String</TriggerLabel>
-				<ControlPageLabel>Current Wind String</ControlPageLabel>
-			</State>
-			<State id="pressureInches">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Pressure (inches)</TriggerLabel>
-				<ControlPageLabel>Current Pressure (inches)</ControlPageLabel>
-			</State>
-			<State id="pressureMillibars">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Pressure (mbar)</TriggerLabel>
-				<ControlPageLabel>Current Pressure (mbar)</ControlPageLabel>
-			</State>
-			<State id="sep2">
-				<ValueType>Separator</ValueType>
-			</State>
-			<State id="location">
-				<ValueType>String</ValueType>
-				<TriggerLabel>Location</TriggerLabel>
-				<ControlPageLabel>Location</ControlPageLabel>
-			</State>
-			<State id="latitude">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Latitude</TriggerLabel>
-				<ControlPageLabel>Latitude</ControlPageLabel>
-			</State>
-			<State id="longitude">
-				<ValueType>Number</ValueType>
-				<TriggerLabel>Longitude</TriggerLabel>
-				<ControlPageLabel>Longitude</ControlPageLabel>
 			</State>
 		</States>
 	</Device>
